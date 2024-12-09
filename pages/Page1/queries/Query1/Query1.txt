@@ -1,0 +1,33 @@
+SELECT 
+  CASE 
+    WHEN EXTRACT(year FROM AGE("endDate", now())) > 0 THEN
+      EXTRACT(year FROM AGE("endDate", now())) || ' years '
+    ELSE ''
+  END ||
+  CASE 
+    WHEN EXTRACT(month FROM AGE("endDate", now())) > 0 THEN
+      EXTRACT(month FROM AGE("endDate", now())) || ' mons '
+    ELSE ''
+  END ||
+  CASE 
+    WHEN EXTRACT(day FROM AGE("endDate", now())) > 0 THEN
+      EXTRACT(day FROM AGE("endDate", now())) || ' days '
+    ELSE ''
+  END ||
+  CASE 
+    WHEN EXTRACT(hour FROM AGE("endDate", now())) > 0 THEN
+      EXTRACT(hour FROM AGE("endDate", now())) || ' hours '
+    ELSE ''
+  END ||
+  CASE 
+    WHEN EXTRACT(minute FROM AGE("endDate", now())) > 0 THEN
+      EXTRACT(minute FROM AGE("endDate", now())) || ' mins '
+    ELSE ''
+  END ||
+  CASE 
+    WHEN EXTRACT(second FROM AGE("endDate", now())) > 0 THEN
+      ROUND(EXTRACT(second FROM AGE("endDate", now()))) || ' secs'
+    ELSE ''
+  END AS time_difference
+FROM qf_round
+WHERE now() BETWEEN "beginDate" AND "endDate";
