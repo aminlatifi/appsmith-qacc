@@ -1,0 +1,1 @@
+SELECT sum(amount) as total_collected FROM public."donation" as donation where ("qfRoundId" is not null or "earlyAccessRoundId" is not null) and status = 'verified'

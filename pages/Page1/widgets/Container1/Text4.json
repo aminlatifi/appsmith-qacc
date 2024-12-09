@@ -44,7 +44,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 64,
   "shouldTruncate": false,
-  "text": "{{qf_round_collected.data[0].total_collected.toLocaleString()}}",
+  "text": "{{qf_round_collected.data[0].total_collected.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}} POL",
   "textAlign": "LEFT",
   "textColor": "#231F20",
   "topRow": 0,

@@ -1,0 +1,50 @@
+WITH
+	USERS_KYC AS (
+		SELECT
+		"walletAddress",
+		12 = ANY ("privadoVerifiedRequestIds") AS "zkVerified",
+		(
+			COALESCE("analysisScore", 0) >= 50
+			OR COALESCE("passportScore", 0) >= 15
+		) AS "gpVerified"
+		FROM
+		PUBLIC.USER
+	),
+	ZK_VERIFIED_COUNT AS (
+		SELECT
+		COUNT(*)
+		FROM
+		USERS_KYC
+		WHERE
+		"zkVerified" = TRUE
+	),
+	GP_VEFIED_COUNT as (
+		SELECT
+		COUNT(*)
+		FROM
+		USERS_KYC
+		WHERE
+		"zkVerified" = FALSE and "gpVerified" = true
+	),
+	UN_VEFIED_COUNT as (
+		SELECT
+		COUNT(*)
+		FROM
+		USERS_KYC
+		WHERE
+		"zkVerified" = FALSE and "gpVerified" = false
+	)
+SELECT
+	'Count of ZK verified users' as title, count
+FROM
+	ZK_VERIFIED_COUNT
+union all
+SELECT
+	'Count of GP verified users' as title, count
+FROM
+	GP_VEFIED_COUNT
+union all
+SELECT
+	'Count of non-verified users' as title, count
+FROM
+	UN_VEFIED_COUNT

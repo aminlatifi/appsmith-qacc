@@ -1,0 +1,1 @@
+SELECT count(DISTINCT(donation."userId")) FROM public."donation" as donation where ("qfRoundId" is not null or "earlyAccessRoundId" is not null) and status = 'verified'

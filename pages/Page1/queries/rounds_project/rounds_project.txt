@@ -1,0 +1,44 @@
+WITH
+	PROJECT_COLLECTED AS (
+		SELECT
+			PROJECT.TITLE,
+			REGEXP_REPLACE(
+				TO_CHAR(SUM(AMOUNT), 'FM999,999,999,990.00'),
+				'\.?0+$',
+				''
+			) AS TOTAL_COLLECTED,
+			REGEXP_REPLACE(
+				TO_CHAR(
+					SUM(COALESCE("valueUsd", 0)),
+					'FM999,999,999,990.00'
+				),
+				'\.?0+$',
+				''
+			) AS TOTAL_USD_COLLECTED
+		FROM
+			PUBLIC."donation" AS DONATION
+			INNER JOIN PUBLIC.PROJECT ON DONATION."projectId" = PROJECT.ID
+		where donation.status = 'verified' and  ("qfRoundId" is not null or "earlyAccessRoundId" is not null)
+		GROUP BY
+			PROJECT."title"
+		ORDER BY
+			TITLE
+	),
+	PROJECT_SUPPORTERS AS (
+		SELECT
+			PROJECT.TITLE,
+			COUNT(DISTINCT (DONATION."userId"))
+		FROM
+			PUBLIC."donation" AS DONATION
+			INNER JOIN PUBLIC.PROJECT ON DONATION."projectId" = PROJECT.ID
+		where donation.status='verified' and ("qfRoundId" is not null or "earlyAccessRoundId" is not null)
+		GROUP BY
+			PROJECT."title"
+		ORDER BY
+			TITLE
+	)
+SELECT
+	*
+FROM
+	PROJECT_COLLECTED
+	INNER JOIN PROJECT_SUPPORTERS ON PROJECT_COLLECTED.TITLE = PROJECT_SUPPORTERS.TITLE

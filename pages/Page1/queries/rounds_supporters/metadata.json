@@ -1,11 +1,11 @@
 {
-  "gitSyncId": "67569f445b43be0e9f74532d_8ced9b65-852b-46ab-98e2-075df9ddf193",
-  "id": "Page1_qf_round_supporters",
+  "gitSyncId": "6756c0869a867f79fac874f6_e66dfef8-7f98-49fe-8da5-29198436fb8b",
+  "id": "Page1_rounds_supporters",
   "pluginId": "postgres-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT count(DISTINCT(donation.\"userId\")) FROM public.\"donation\" as donation inner join public.qf_round on donation.\"qfRoundId\" = qf_round.id  where status = 'verified'\n",
+      "body": "SELECT count(DISTINCT(donation.\"userId\")) FROM public.\"donation\" as donation where (\"qfRoundId\" is not null or \"earlyAccessRoundId\" is not null) and status = 'verified'",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -24,7 +24,7 @@
     },
     "dynamicBindingPathList": [],
     "executeOnLoad": true,
-    "name": "qf_round_supporters",
+    "name": "rounds_supporters",
     "pageId": "Page1",
     "userSetOnLoad": false
   }
