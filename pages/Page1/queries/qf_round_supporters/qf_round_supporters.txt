@@ -1,0 +1,1 @@
+SELECT count(DISTINCT(donation."userId")) FROM public."donation" as donation inner join public.qf_round on donation."qfRoundId" = qf_round.id

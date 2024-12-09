@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 5,
+  "bottomRow": 90,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -21,7 +21,7 @@
   "isLoading": false,
   "isVisible": true,
   "key": "3hh8t38jfx",
-  "leftColumn": 22,
+  "leftColumn": 17,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
@@ -30,23 +30,23 @@
   "mobileRightColumn": 23,
   "mobileTopRow": 19,
   "needsErrorInfo": false,
-  "originalBottomRow": 5,
-  "originalTopRow": 0,
+  "originalBottomRow": 90,
+  "originalTopRow": 85,
   "overflow": "NONE",
   "parentColumnSpace": 33.265625,
   "parentId": "0",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 44,
+  "rightColumn": 51,
   "shouldTruncate": false,
-  "text": "QAcc Remaining",
+  "text": "Total # Supporters Per Project",
   "textAlign": "CENTER",
   "textColor": "#231f20",
-  "topRow": 0,
+  "topRow": 85,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,
-  "widgetId": "xwaxewrrqn",
-  "widgetName": "Text1"
+  "widgetId": "h8yeb02329",
+  "widgetName": "Text1Copy1CopyCopy"
 }

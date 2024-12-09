@@ -1,0 +1,8 @@
+SELECT 
+		project.title, 
+		regexp_replace(to_char(sum(amount), 'FM999,999,999,990.00'), '\.?0+$', '') AS total_collected
+	FROM public."donation" as donation 
+	inner join public.qf_round on donation."qfRoundId" = qf_round.id 
+	inner join public.project on donation."projectId" = project.id 
+	group by project."title"
+	order by title

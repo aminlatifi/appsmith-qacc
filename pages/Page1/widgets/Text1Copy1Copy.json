@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 5,
+  "bottomRow": 49,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -30,8 +30,8 @@
   "mobileRightColumn": 23,
   "mobileTopRow": 19,
   "needsErrorInfo": false,
-  "originalBottomRow": 5,
-  "originalTopRow": 0,
+  "originalBottomRow": 49,
+  "originalTopRow": 44,
   "overflow": "NONE",
   "parentColumnSpace": 33.265625,
   "parentId": "0",
@@ -40,13 +40,13 @@
   "responsiveBehavior": "fill",
   "rightColumn": 44,
   "shouldTruncate": false,
-  "text": "QAcc Remaining",
+  "text": "Total Collected Per Project",
   "textAlign": "CENTER",
   "textColor": "#231f20",
-  "topRow": 0,
+  "topRow": 44,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,
-  "widgetId": "xwaxewrrqn",
-  "widgetName": "Text1"
+  "widgetId": "9b17h5qcdi",
+  "widgetName": "Text1Copy1Copy"
 }

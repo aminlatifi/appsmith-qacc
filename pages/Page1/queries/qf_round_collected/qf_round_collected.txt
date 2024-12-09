@@ -1,0 +1,1 @@
+SELECT sum(amount) as total_collected FROM public."donation" as donation inner join public.qf_round on donation."qfRoundId" = qf_round.id
