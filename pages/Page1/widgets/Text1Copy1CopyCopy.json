@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 130,
+  "bottomRow": 146,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -30,8 +30,8 @@
   "mobileRightColumn": 23,
   "mobileTopRow": 19,
   "needsErrorInfo": false,
-  "originalBottomRow": 130,
-  "originalTopRow": 125,
+  "originalBottomRow": 146,
+  "originalTopRow": 141,
   "overflow": "NONE",
   "parentColumnSpace": 33.265625,
   "parentId": "0",
@@ -43,7 +43,7 @@
   "text": "Projects All Round Stats",
   "textAlign": "CENTER",
   "textColor": "#231f20",
-  "topRow": 125,
+  "topRow": 141,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,
